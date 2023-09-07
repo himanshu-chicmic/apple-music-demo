@@ -13,6 +13,12 @@
 		6A0B74972AA98A4A000004D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0B74952AA98A4A000004D4 /* Main.storyboard */; };
 		6A0B74992AA98A4B000004D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A0B74982AA98A4B000004D4 /* Assets.xcassets */; };
 		6A0B749C2AA98A4B000004D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0B749A2AA98A4B000004D4 /* LaunchScreen.storyboard */; };
+		6A19EC1D2AA9A2CF004386DD /* AppleMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A19EC1C2AA9A2CF004386DD /* AppleMusicManager.swift */; };
+		6A19EC212AA9AE79004386DD /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A19EC202AA9AE79004386DD /* ViewController+TableView.swift */; };
+		6A19EC232AA9AE92004386DD /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A19EC222AA9AE92004386DD /* SongTableViewCell.swift */; };
+		6A9DA85A2AA9D024006B3A9A /* MusicItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DA8592AA9D024006B3A9A /* MusicItemModel.swift */; };
+		6A9DA85C2AA9D55B006B3A9A /* ViewController+SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DA85B2AA9D55B006B3A9A /* ViewController+SearchController.swift */; };
+		6A9DA8602AA9F730006B3A9A /* MusicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DA85F2AA9F730006B3A9A /* MusicInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +30,13 @@
 		6A0B74982AA98A4B000004D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A0B749B2AA98A4B000004D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A0B749D2AA98A4B000004D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A19EC182AA99199004386DD /* AppleMusicDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppleMusicDemo.entitlements; sourceTree = "<group>"; };
+		6A19EC1C2AA9A2CF004386DD /* AppleMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicManager.swift; sourceTree = "<group>"; };
+		6A19EC1E2AA9A445004386DD /* AppleMusicDemo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = AppleMusicDemo.entitlements; path = ../../../../.Trash/AppleMusicDemo.entitlements; sourceTree = "<group>"; };
+		6A19EC202AA9AE79004386DD /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
+		6A19EC222AA9AE92004386DD /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		6A9DA8592AA9D024006B3A9A /* MusicItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemModel.swift; sourceTree = "<group>"; };
+		6A9DA85B2AA9D55B006B3A9A /* ViewController+SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SearchController.swift"; sourceTree = "<group>"; };
+		6A9DA85F2AA9F730006B3A9A /* MusicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,16 +69,86 @@
 		6A0B748E2AA98A4A000004D4 /* AppleMusicDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6A19EC182AA99199004386DD /* AppleMusicDemo.entitlements */,
+				6A19EC1E2AA9A445004386DD /* AppleMusicDemo.entitlements */,
+				6A19EC2A2AA9CDC6004386DD /* DataModels */,
+				6A19EC1B2AA9A2B6004386DD /* AppleMusicManager */,
+				6A19EC1A2AA9A294004386DD /* ViewControllers */,
+				6A19EC192AA9A28B004386DD /* Storyboards */,
 				6A0B748F2AA98A4A000004D4 /* AppDelegate.swift */,
 				6A0B74912AA98A4A000004D4 /* SceneDelegate.swift */,
-				6A0B74932AA98A4A000004D4 /* ViewController.swift */,
-				6A0B74952AA98A4A000004D4 /* Main.storyboard */,
 				6A0B74982AA98A4B000004D4 /* Assets.xcassets */,
-				6A0B749A2AA98A4B000004D4 /* LaunchScreen.storyboard */,
 				6A0B749D2AA98A4B000004D4 /* Info.plist */,
 			);
 			path = AppleMusicDemo;
+			sourceTree = "<group>";
+		};
+		6A19EC192AA9A28B004386DD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6A0B749A2AA98A4B000004D4 /* LaunchScreen.storyboard */,
+				6A0B74952AA98A4A000004D4 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6A19EC1A2AA9A294004386DD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6A9DA85E2AA9F70E006B3A9A /* MusicInfoView */,
+				6A9DA85D2AA9F6FF006B3A9A /* MusicListView */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6A19EC1B2AA9A2B6004386DD /* AppleMusicManager */ = {
+			isa = PBXGroup;
+			children = (
+				6A19EC1C2AA9A2CF004386DD /* AppleMusicManager.swift */,
+			);
+			path = AppleMusicManager;
+			sourceTree = "<group>";
+		};
+		6A19EC242AA9AE96004386DD /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				6A19EC222AA9AE92004386DD /* SongTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		6A19EC252AA9AEAE004386DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6A19EC202AA9AE79004386DD /* ViewController+TableView.swift */,
+				6A9DA85B2AA9D55B006B3A9A /* ViewController+SearchController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6A19EC2A2AA9CDC6004386DD /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				6A9DA8592AA9D024006B3A9A /* MusicItemModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		6A9DA85D2AA9F6FF006B3A9A /* MusicListView */ = {
+			isa = PBXGroup;
+			children = (
+				6A19EC252AA9AEAE004386DD /* Extensions */,
+				6A19EC242AA9AE96004386DD /* TableCells */,
+				6A0B74932AA98A4A000004D4 /* ViewController.swift */,
+			);
+			path = MusicListView;
+			sourceTree = "<group>";
+		};
+		6A9DA85E2AA9F70E006B3A9A /* MusicInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				6A9DA85F2AA9F730006B3A9A /* MusicInfoViewController.swift */,
+			);
+			path = MusicInfoView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +222,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A19EC232AA9AE92004386DD /* SongTableViewCell.swift in Sources */,
+				6A19EC1D2AA9A2CF004386DD /* AppleMusicManager.swift in Sources */,
+				6A9DA85A2AA9D024006B3A9A /* MusicItemModel.swift in Sources */,
 				6A0B74942AA98A4A000004D4 /* ViewController.swift in Sources */,
+				6A9DA85C2AA9D55B006B3A9A /* ViewController+SearchController.swift in Sources */,
 				6A0B74902AA98A4A000004D4 /* AppDelegate.swift in Sources */,
+				6A19EC212AA9AE79004386DD /* ViewController+TableView.swift in Sources */,
+				6A9DA8602AA9F730006B3A9A /* MusicInfoViewController.swift in Sources */,
 				6A0B74922AA98A4A000004D4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +381,7 @@
 				DEVELOPMENT_TEAM = LPRPC642LQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicDemo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Media Library Usage Permission is Needed.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -326,6 +415,7 @@
 				DEVELOPMENT_TEAM = LPRPC642LQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicDemo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Media Library Usage Permission is Needed.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
