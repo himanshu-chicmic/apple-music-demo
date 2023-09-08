@@ -15,7 +15,7 @@ struct MusicItemModel: Identifiable, Hashable, Codable {
     let title: String
     let artistName: String
     let imageData: Data?
-    let duraction: TimeInterval?
+    let duration: TimeInterval?
     
     let genreNames: [String]
     

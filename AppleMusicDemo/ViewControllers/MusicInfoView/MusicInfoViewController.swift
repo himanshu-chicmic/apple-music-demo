@@ -2,28 +2,40 @@
 //  MusicInfoViewController.swift
 //  AppleMusicDemo
 //
-//  Created by Nitin on 9/7/23.
+//  Created by Himanshu on 9/7/23.
 //
 
 import UIKit
 
 class MusicInfoViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var albumTitleLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var composerNameLabel: UILabel!
+    
+    // MARK: - Properties
+    var songData: MusicItemModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        navigationController?.navigationItem.titleView?.tintColor = .white
+        
+        setDataToView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setDataToView() {
+        if let data = songData {
+            backgroundImageView.image = UIImage(data: data.imageData!)
+            titleLabel.text = "\(data.title)"
+            albumTitleLabel.text = "\(data.albumTitle ?? "")"
+            artistNameLabel.text = "by \(data.artistName)"
+            composerNameLabel.text = "\(data.composerName ?? "")"
+        }
     }
-    */
-
 }

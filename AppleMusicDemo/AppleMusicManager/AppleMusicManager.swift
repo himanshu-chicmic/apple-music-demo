@@ -37,7 +37,8 @@ class AppleMusicManager {
             case .authorized:
                 do {
                     // search request for "query" with types to look for (Song, Artist, Album)
-                    var request = MusicCatalogSearchRequest(term: query, types: [Song.self, Artist.self, Album.self])
+                    var request = MusicCatalogSearchRequest(term: query, types: [Song.self, Artist.self, Album.self, MusicVideo.self])
+                    
                     request.limit = fetchResultLimit
                     // get request's reponse
                     let result = try await request.response()
@@ -48,8 +49,8 @@ class AppleMusicManager {
                             url          : $0.url,
                             title        : $0.title,
                             artistName   : $0.artistName,
-                            imageData    : try? Data(contentsOf: $0.artwork?.url(width: 64, height: 64) ?? URL(string: "https://dummy.com")!),
-                            duraction    : $0.duration,
+                            imageData    : try? Data(contentsOf: $0.artwork?.url(width: 1080, height: 1080) ?? URL(string: "https://dummy.com")!),
+                            duration     : $0.duration,
                             genreNames   : $0.genreNames,
                             hasLyrics    : $0.hasLyrics,
                             composerName : $0.composerName,

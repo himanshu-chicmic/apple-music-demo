@@ -31,4 +31,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.favouriteButton.isHidden = !searchViewIsActive
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SongInfo") as? MusicInfoViewController else {
+            return
+        }
+        destinationVC.songData = tableViewMusicList[indexPath.row]
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }
