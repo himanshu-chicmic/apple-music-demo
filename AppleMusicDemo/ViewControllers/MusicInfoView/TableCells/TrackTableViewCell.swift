@@ -18,7 +18,7 @@ class TrackTableViewCell: UITableViewCell {
     // MARK: - Methods
     
     /// Method to set data in tableViewCell
-    /// - Parameter song: MusicItemCollection instance
+    /// - Parameter song: MusicItemCollection<Track> instance
     func setData(album: MusicItemCollection<Track>.Element) {
         songNameLabel.text = album.title
         artistNameLabel.text = album.artistName

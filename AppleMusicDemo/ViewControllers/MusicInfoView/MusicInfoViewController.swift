@@ -16,8 +16,8 @@ class MusicInfoViewController: UIViewController {
     @IBOutlet weak var albumTitleLable: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var tracksCountLable: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Properties
     
     // shared instance for AppleMusicManager class
@@ -26,16 +26,16 @@ class MusicInfoViewController: UIViewController {
     var album: MusicItemCollection<Album>.Element?
     var trackList: MusicItemCollection<Track> = []
     
-    private var musicSub: MusicSubscription?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setDataToView()
-        
         fetchAlbumTracks()
     }
     
+    // MARK: - Methods
+    
+    /// Method to call checkAppleMusicSubscription to get info if the user can play the songs or not
     func checkCanPlayMusic() {
         musicManager.checkAppleMusicSubscription { play in
             if !play {
@@ -45,6 +45,7 @@ class MusicInfoViewController: UIViewController {
         }
     }
     
+    /// Method to fetch album tracks from fetchAlbumTracks
     func fetchAlbumTracks() {
         if let album {
             musicManager.fetchAlbumTracks(album: album) { value in
@@ -57,8 +58,10 @@ class MusicInfoViewController: UIViewController {
         }
     }
     
+    /// Method to set data in the view
     func setDataToView() {
         if let album {
+            // set image view
             DispatchQueue.global(qos: .userInteractive).async {
                 if let image = try? Data(contentsOf: album.artwork?.url(width: 1080, height: 1080) ?? URL(string: "https://dummy.com")!) {
                     DispatchQueue.main.async {
@@ -66,7 +69,7 @@ class MusicInfoViewController: UIViewController {
                     }
                 }
             }
-            
+            // set label values
             albumTitleLable.text = album.title
             artistNameLabel.text = "by \(album.artistName)"
         }

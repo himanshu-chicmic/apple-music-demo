@@ -24,6 +24,8 @@ class AppleMusicManager {
     
     // MARK: - Methods
     
+    /// Method to check if user can play music
+    /// - Parameter completion: boolean value
     func checkAppleMusicSubscription(completion: @escaping (Bool) -> Void) {
         Task {
             // var to store music subscription updates/type
@@ -37,6 +39,10 @@ class AppleMusicManager {
         }
     }
     
+    /// Method to fetch album tracks
+    /// - Parameters:
+    ///   - album: album instance whose tracks are fetched
+    ///   - completion: completion sends a collection of type MusicItemCollection<Track>
     func fetchAlbumTracks(album: MusicItemCollection<Album>.Element, completion: @escaping (MusicItemCollection<Track>) -> Void) {
         Task {
             do {
@@ -56,7 +62,7 @@ class AppleMusicManager {
     /// Method to fetch music items based on "query" string
     /// - Parameters:
     ///   - query: a string value for search term
-    ///   - completion: escaping closure for sending an array of type [MusicItemModel]
+    ///   - completion: escaping closure for sending collection of type MusicItemCollection<Album>
     func fetchMusicAlbum(query: String, completion: @escaping (MusicItemCollection<Album>) -> Void) {
         Task {
             // check status of Music Authorization
