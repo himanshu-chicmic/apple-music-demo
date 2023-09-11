@@ -32,7 +32,6 @@ class ViewController: UIViewController {
                 tableView.isHidden = false
             } else {
                 tableViewMusicList = []
-                tableView.reloadData()
                 tableView.isHidden = tableViewMusicList.isEmpty
                 emptyListView.isHidden = !tableViewMusicList.isEmpty
             }
@@ -40,7 +39,11 @@ class ViewController: UIViewController {
     }
     
     // array which is used to show data in table view
-    var tableViewMusicList: MusicItemCollection<Album> = []
+    var tableViewMusicList: MusicItemCollection<Album> = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle Methods
     
@@ -70,11 +73,8 @@ class ViewController: UIViewController {
         
         // call fetch music to get data
         musicManager.fetchMusicAlbum(query: query) { value in
-            
-            self.tableViewMusicList = value
-            
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.tableViewMusicList = value
                 self.loadingIndicator.stopAnimating()
             }
         }

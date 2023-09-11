@@ -24,7 +24,12 @@ class MusicInfoViewController: UIViewController {
     let musicManager = AppleMusicManager.shared
     
     var album: MusicItemCollection<Album>.Element?
-    var trackList: MusicItemCollection<Track> = []
+    var trackList: MusicItemCollection<Track> = [] {
+        didSet {
+            self.tableView.reloadData()
+            self.tracksCountLable.text = "\(self.trackList.count) songs"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +54,8 @@ class MusicInfoViewController: UIViewController {
     func fetchAlbumTracks() {
         if let album {
             musicManager.fetchAlbumTracks(album: album) { value in
-                self.trackList = value
                 DispatchQueue.main.async {
-                    self.tracksCountLable.text = "\(self.trackList.count) songs"
-                    self.tableView.reloadData()
+                    self.trackList = value
                 }
             }
         }
