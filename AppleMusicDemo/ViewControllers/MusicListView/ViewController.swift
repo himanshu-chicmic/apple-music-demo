@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MusicKit
 
 class ViewController: UIViewController {
 
@@ -26,39 +27,19 @@ class ViewController: UIViewController {
     
     var searchViewIsActive: Bool = false {
         didSet {
-            print("\(searchViewIsActive)")
             if searchViewIsActive {
                 emptyListView.isHidden = true
                 tableView.isHidden = false
-                tableViewMusicList = []
-                tableView.reloadData()
             } else {
-                tableViewMusicList = musicList
-                tableView.reloadData()
-                tableView.isHidden = musicList.isEmpty
-                emptyListView.isHidden = !musicList.isEmpty
+                tableViewMusicList = []
+                tableView.isHidden = tableViewMusicList.isEmpty
+                emptyListView.isHidden = !tableViewMusicList.isEmpty
             }
         }
-    }
-    
-    // array containing user's saved music files
-    var musicList: [MusicItemModel] {
-        
-        var list: [MusicItemModel] = []
-        
-        if let savedData = UserDefaults.standard.object(forKey: "Music.List") as? [Data] {
-            for data in savedData {
-                if let jsonData = try? JSONDecoder().decode(MusicItemModel.self, from: data) {
-                    list.append(jsonData)
-                }
-            }
-        }
-        
-        return list
     }
     
     // array which is used to show data in table view
-    var tableViewMusicList: [MusicItemModel] = []
+    var tableViewMusicList: MusicItemCollection<Album> = []
     
     // MARK: - Lifecycle Methods
     
@@ -67,16 +48,13 @@ class ViewController: UIViewController {
         
         // set search bar and table view
         initSearchBar()
-        initTableView()
         
         // set activity indicator in view
         setActivityIndicator()
         
         // show hide view based on the music list array count
-        tableView.isHidden = musicList.isEmpty
-        emptyListView.isHidden = !musicList.isEmpty
-        
-        tableViewMusicList = musicList
+        tableView.isHidden = tableViewMusicList.isEmpty
+        emptyListView.isHidden = !tableViewMusicList.isEmpty
     }
     
     // MARK: - Methods
@@ -90,11 +68,9 @@ class ViewController: UIViewController {
         loadingIndicator.startAnimating()
         
         // call fetch music to get data
-        musicManager.fetchMusic(query: query) { value in
+        musicManager.fetchMusicAlbum(query: query) { value in
             
-            let set1:Set<MusicItemModel> = Set(self.musicList)
-            let set2:Set<MusicItemModel> = Set(value)
-            self.tableViewMusicList = Array(set2.symmetricDifference(set1))
+            self.tableViewMusicList = value
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()

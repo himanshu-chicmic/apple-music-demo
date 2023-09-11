@@ -18,57 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MT1-Ne-R5n">
-                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="songItemCell" id="Xwq-FL-4Wz" customClass="SongTableViewCell" customModule="AppleMusicDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="152.33332824707031"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="albumCell" id="Xwq-FL-4Wz" customClass="AlbumTableViewCell" customModule="AppleMusicDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="88.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xwq-FL-4Wz" id="Nlr-ox-C7v">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="152.33332824707031"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="88.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-Bx-uL3">
-                                                    <rect key="frame" x="16" y="12" width="361" height="128.33333333333334"/>
+                                                    <rect key="frame" x="16" y="12" width="361" height="64.333333333333329"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUr-qt-Pd5">
-                                                            <rect key="frame" x="0.0" y="32.333333333333343" width="64" height="64"/>
+                                                            <rect key="frame" x="0.0" y="0.3333333333333357" width="64" height="64"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="64" id="RHM-oF-zn6"/>
                                                                 <constraint firstAttribute="height" constant="64" id="jU9-Bk-Nnp"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Wem-bO-ADS">
-                                                            <rect key="frame" x="76" y="47.666666666666657" width="28" height="33.333333333333343"/>
+                                                            <rect key="frame" x="76" y="15.666666666666668" width="285" height="33.333333333333329"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMo-M8-w4l">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="28" height="15.666666666666666"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="15.666666666666666"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWK-zY-hjJ">
-                                                                    <rect key="frame" x="0.0" y="17.666666666666664" width="28" height="15.666666666666664"/>
+                                                                    <rect key="frame" x="0.0" y="17.666666666666668" width="285" height="15.666666666666668"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxn-aD-l1f">
-                                                            <rect key="frame" x="116.00000000000001" y="0.3333333333333286" width="182.33333333333337" height="127.99999999999999"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yay-0p-j08">
-                                                            <rect key="frame" x="310.33333333333331" y="47" width="50.666666666666686" height="34.333333333333343"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
-                                                                <color key="baseForegroundColor" red="1" green="0.41122608891218732" blue="0.38979092487635814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </buttonConfiguration>
-                                                            <connections>
-                                                                <action selector="addToListTapped:" destination="Xwq-FL-4Wz" eventType="touchUpInside" id="WqF-rW-DFZ"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -82,11 +68,14 @@
                                         <connections>
                                             <outlet property="artistNameLabel" destination="aWK-zY-hjJ" id="iPJ-gc-XA7"/>
                                             <outlet property="artworkImageView" destination="cUr-qt-Pd5" id="TfS-FY-jaI"/>
-                                            <outlet property="favouriteButton" destination="yay-0p-j08" id="V2q-6z-uCB"/>
                                             <outlet property="songNameLabel" destination="zMo-M8-w4l" id="ANI-wk-Lok"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TpS-Mh-gSR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VV8-Ee-3sv"/>
+                                </connections>
                             </tableView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hd4-l6-8W8" userLabel="Empty List">
                                 <rect key="frame" x="0.0" y="279" width="393" height="294"/>
@@ -135,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="851" y="-2"/>
         </scene>
-        <!--Song Info-->
+        <!--Music Info View Controller-->
         <scene sceneID="BOd-dB-Jdt">
             <objects>
-                <viewController storyboardIdentifier="SongInfo" id="dfF-h3-Fs4" customClass="MusicInfoViewController" customModule="AppleMusicDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlbumInfo" id="dfF-h3-Fs4" customClass="MusicInfoViewController" customModule="AppleMusicDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Cg-Ax-B19">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,80 +138,118 @@
                                     <constraint firstAttribute="height" constant="400" id="Eou-ca-7E5"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2Ip-FN-y2m">
-                                <rect key="frame" x="24" y="434" width="345" height="128.33333333333337"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Way I Am" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYF-4q-1LL">
-                                        <rect key="frame" x="103.33333333333333" y="0.0" width="138.66666666666669" height="26.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Album: Voicenotes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OI-ot-1Fe">
-                                        <rect key="frame" x="97.666666666666686" y="32.333333333333314" width="150" height="21.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Charlie Puth" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOI-kq-vSq">
-                                        <rect key="frame" x="104.33333333333336" y="60" width="136.66666666666663" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composers: Charlie Puth &amp; Jacob Kasher Hindlin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC9-Zg-tm8">
-                                        <rect key="frame" x="48.666666666666686" y="90" width="248" height="38.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-La-Mya">
-                                <rect key="frame" x="34" y="596.33333333333337" width="325" height="44.333333333333371"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6R-M2-taC">
-                                        <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="44.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Play" imagePadding="6" cornerStyle="medium">
-                                            <imageReference key="image" image="play.fill" catalog="system" symbolScale="medium"/>
-                                            <backgroundConfiguration key="background"/>
-                                            <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAK-XV-0hZ">
-                                        <rect key="frame" x="166.66666666666663" y="0.0" width="158.33333333333337" height="44.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Subscribe" imagePadding="6" cornerStyle="medium">
-                                            <imageReference key="image" image="music.note" catalog="system" symbolScale="medium"/>
-                                            <backgroundConfiguration key="background"/>
-                                            <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYH-Ve-vd7">
+                                <rect key="frame" x="24" y="412" width="345" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-oe-YRk">
+                                <rect key="frame" x="24" y="438.33333333333331" width="345" height="21.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-jY-9ft">
+                                <rect key="frame" x="24.000000000000004" y="460" width="40.333333333333343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-gu-1c4">
+                                <rect key="frame" x="0.0" y="489" width="393" height="329"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trackCell" id="sty-rJ-1dX" customClass="TrackTableViewCell" customModule="AppleMusicDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="56.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sty-rJ-1dX" id="3Mw-fD-cN1">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="56.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="clS-yR-Yy2">
+                                                    <rect key="frame" x="24" y="12" width="345" height="32.666666666666664"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qoc-Ho-t6n">
+                                                            <rect key="frame" x="0.0" y="5.3333333333333304" width="24" height="22.666666666666664"/>
+                                                            <color key="tintColor" systemColor="systemGray4Color"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="24" id="ZT2-wa-PQf"/>
+                                                                <constraint firstAttribute="height" constant="24" id="Zzk-OS-s7e"/>
+                                                            </constraints>
+                                                            <imageReference key="image" image="music.note.list" catalog="system" symbolScale="default" variableValue="0.0"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ht5-uu-jqN">
+                                                            <rect key="frame" x="32" y="0.33333333333333215" width="313" height="32.333333333333343"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-ap-n4n">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="313" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-Nc-fH8">
+                                                                    <rect key="frame" x="0.0" y="18" width="313" height="14.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="clS-yR-Yy2" secondAttribute="bottom" constant="12" id="9z1-nn-QKT"/>
+                                                <constraint firstItem="clS-yR-Yy2" firstAttribute="top" secondItem="3Mw-fD-cN1" secondAttribute="top" constant="12" id="n7n-di-Z0Y"/>
+                                                <constraint firstItem="clS-yR-Yy2" firstAttribute="leading" secondItem="3Mw-fD-cN1" secondAttribute="leading" constant="24" id="tLk-G1-QTA"/>
+                                                <constraint firstAttribute="trailing" secondItem="clS-yR-Yy2" secondAttribute="trailing" constant="24" id="wYC-aR-t3R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="artistNameLabel" destination="H9m-Nc-fH8" id="8eC-W4-Kcf"/>
+                                            <outlet property="songNameLabel" destination="kjl-ap-n4n" id="VF8-fM-f8n"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dfF-h3-Fs4" id="4eX-zb-f1Q"/>
+                                    <outlet property="delegate" destination="dfF-h3-Fs4" id="JMA-El-vr6"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iDe-qu-uHT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="CJc-La-Mya" secondAttribute="trailing" constant="34" id="3tl-WG-NIM"/>
-                            <constraint firstItem="CJc-La-Mya" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" constant="34" id="A0Y-Y6-r02"/>
-                            <constraint firstItem="2Ip-FN-y2m" firstAttribute="bottom" secondItem="CJc-La-Mya" secondAttribute="top" constant="-34" id="BsO-2I-hnV"/>
+                            <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="oTg-oe-YRk" secondAttribute="trailing" constant="24" id="0Oo-hX-eGf"/>
+                            <constraint firstItem="DYH-Ve-vd7" firstAttribute="top" secondItem="Onw-Ec-3mW" secondAttribute="bottom" constant="12" id="2dT-VD-o6X"/>
+                            <constraint firstItem="HZm-gu-1c4" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" id="30z-71-eoj"/>
+                            <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eoN-jY-9ft" secondAttribute="trailing" symbolic="YES" id="Aaz-Gw-R2q"/>
+                            <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="HZm-gu-1c4" secondAttribute="trailing" id="C6f-Kd-mRJ"/>
+                            <constraint firstItem="HZm-gu-1c4" firstAttribute="top" secondItem="eoN-jY-9ft" secondAttribute="bottom" constant="12" id="JE0-wa-Akt"/>
+                            <constraint firstItem="eoN-jY-9ft" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" constant="24" id="KnC-TB-5fu"/>
                             <constraint firstItem="Onw-Ec-3mW" firstAttribute="top" secondItem="6Cg-Ax-B19" secondAttribute="top" id="NMz-5j-yT0"/>
-                            <constraint firstItem="2Ip-FN-y2m" firstAttribute="top" secondItem="Onw-Ec-3mW" secondAttribute="bottom" constant="34" id="NSh-yo-3Mx"/>
-                            <constraint firstItem="2Ip-FN-y2m" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" constant="24" id="dGQ-g1-NLt"/>
+                            <constraint firstItem="DYH-Ve-vd7" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" constant="24" id="Shb-4r-VaX"/>
+                            <constraint firstItem="eoN-jY-9ft" firstAttribute="top" secondItem="oTg-oe-YRk" secondAttribute="bottom" id="bDW-Du-HdB"/>
+                            <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="DYH-Ve-vd7" secondAttribute="trailing" constant="24" id="gAA-Ei-XXi"/>
                             <constraint firstItem="Onw-Ec-3mW" firstAttribute="trailing" secondItem="iDe-qu-uHT" secondAttribute="trailing" id="hHq-wc-Cu8"/>
                             <constraint firstItem="Onw-Ec-3mW" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" id="kfq-BW-GwR"/>
-                            <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="2Ip-FN-y2m" secondAttribute="trailing" constant="24" id="tL5-uc-OKV"/>
+                            <constraint firstItem="iDe-qu-uHT" firstAttribute="bottom" secondItem="HZm-gu-1c4" secondAttribute="bottom" id="ldQ-kN-dEt"/>
+                            <constraint firstItem="oTg-oe-YRk" firstAttribute="top" secondItem="DYH-Ve-vd7" secondAttribute="bottom" id="nI2-Qw-pYO"/>
+                            <constraint firstItem="oTg-oe-YRk" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" constant="24" id="sbZ-8y-1ej"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Song Info" largeTitleDisplayMode="never" style="editor" id="FNs-1e-Mn8"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" style="editor" id="FNs-1e-Mn8"/>
                     <connections>
-                        <outlet property="albumTitleLabel" destination="0OI-ot-1Fe" id="W5r-kL-eXA"/>
-                        <outlet property="artistNameLabel" destination="GOI-kq-vSq" id="hLu-jx-3rS"/>
+                        <outlet property="albumTitleLable" destination="DYH-Ve-vd7" id="iH5-hK-eJE"/>
+                        <outlet property="artistNameLabel" destination="oTg-oe-YRk" id="eyZ-Ia-tEE"/>
                         <outlet property="backgroundImageView" destination="Onw-Ec-3mW" id="bjj-L8-LFQ"/>
-                        <outlet property="composerNameLabel" destination="lC9-Zg-tm8" id="ELu-98-h8j"/>
-                        <outlet property="titleLabel" destination="gYF-4q-1LL" id="hyr-Qv-VaW"/>
+                        <outlet property="tableView" destination="HZm-gu-1c4" id="LZp-d7-tI3"/>
+                        <outlet property="tracksCountLable" destination="eoN-jY-9ft" id="svj-ZK-vYz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nn-Jt-7ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -250,11 +277,15 @@
     </scenes>
     <resources>
         <image name="Empty" width="1080" height="1080"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="music.note" catalog="system" width="96" height="128"/>
-        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

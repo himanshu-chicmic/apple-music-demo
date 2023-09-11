@@ -9,14 +9,6 @@ import UIKit
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: - Table View Configuration
-    
-    /// Method to initialize table view
-    func initTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-    }
-    
     // MARK: - Table View Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,19 +16,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "songItemCell", for: indexPath) as? SongTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "albumCell", for: indexPath) as? AlbumTableViewCell else {
             fatalError("Unable to Dequeue Cell")
         }
-        cell.setData(song: tableViewMusicList[indexPath.row])
-        cell.favouriteButton.isHidden = !searchViewIsActive
+        cell.setData(album: tableViewMusicList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SongInfo") as? MusicInfoViewController else {
+        guard let destinationVC = storyboard?.instantiateViewController(withIdentifier: "AlbumInfo") as? MusicInfoViewController else {
             return
         }
-        destinationVC.songData = tableViewMusicList[indexPath.row]
+        destinationVC.album = tableViewMusicList[indexPath.row]
         navigationController?.pushViewController(destinationVC, animated: true)
     }
 }
