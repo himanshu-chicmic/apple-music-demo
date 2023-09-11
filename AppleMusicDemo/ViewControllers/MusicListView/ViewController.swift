@@ -32,6 +32,7 @@ class ViewController: UIViewController {
                 tableView.isHidden = false
             } else {
                 tableViewMusicList = []
+                tableView.reloadData()
                 tableView.isHidden = tableViewMusicList.isEmpty
                 emptyListView.isHidden = !tableViewMusicList.isEmpty
             }
