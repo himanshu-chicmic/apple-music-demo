@@ -21,12 +21,13 @@ extension ViewController: UISearchBarDelegate {
         searchController.searchBar.delegate = self
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchViewIsActive = false
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        collectionView.isHidden = true
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchViewIsActive = true
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableViewMusicList = []
+        collectionView.isHidden = false
     }
     
     @objc

@@ -55,6 +55,33 @@ class AppleMusicManager {
                 completion(tracks)
             } catch {
                 print("Request Error: \(error.localizedDescription)")
+                completion([])
+            }
+        }
+    }
+    
+    func fetchMusicPlaylists(completion: @escaping (MusicItemCollection<Playlist>) -> Void) {
+        Task {
+            let status = await MusicAuthorization.request()
+            switch status {
+            case .authorized:
+                do {
+                    let request = MusicCatalogChartsRequest(kinds: [.mostPlayed], types: [Album.self, Song.self, Playlist.self])
+                    let result = try await request.response()
+                    
+                    guard let playlist = result.playlistCharts.first?.items else {
+                        completion([])
+                        return
+                    }
+                    
+                    completion(playlist)
+                } catch {
+                    print("Request Error: \(error.localizedDescription)")
+                    completion([])
+                }
+            default:
+                completion([])
+                break
             }
         }
     }
@@ -82,6 +109,7 @@ class AppleMusicManager {
                     completion(albums)
                 } catch {
                     print("Request Error: \(error.localizedDescription)")
+                    completion([])
                 }
             // permission not granted
             default:

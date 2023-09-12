@@ -14,7 +14,7 @@ class ViewController: UIViewController, SKCloudServiceSetupViewControllerDelegat
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var emptyListView: UIStackView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - UI Items
     
@@ -26,24 +26,19 @@ class ViewController: UIViewController, SKCloudServiceSetupViewControllerDelegat
     // shared instance for AppleMusicManager class
     let musicManager = AppleMusicManager.shared
     
-    // property to check active state of search view editor
-    var searchViewIsActive: Bool = false {
-        didSet {
-            if searchViewIsActive {
-                emptyListView.isHidden = true
-                tableView.isHidden = false
-            } else {
-                tableViewMusicList = []
-                tableView.isHidden = tableViewMusicList.isEmpty
-                emptyListView.isHidden = !tableViewMusicList.isEmpty
-            }
-        }
-    }
-    
     // array which is used to show data in table view
     var tableViewMusicList: MusicItemCollection<Album> = [] {
         didSet {
+            tableView.isHidden = tableViewMusicList.isEmpty
             tableView.reloadData()
+        }
+    }
+    
+    var collectionViewList: MusicItemCollection<Playlist> = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -52,22 +47,26 @@ class ViewController: UIViewController, SKCloudServiceSetupViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // show apple music signup
+        showAppleMusicSignup()
+        
         // set search bar and table view
         initSearchBar()
         
         // set activity indicator in view
         setActivityIndicator()
         
-        // show hide view based on the music list array count
-        tableView.isHidden = tableViewMusicList.isEmpty
-        emptyListView.isHidden = !tableViewMusicList.isEmpty
-        
-        showAppleMusicSignup()
+        loadingIndicator.startAnimating()
+        self.musicManager.fetchMusicPlaylists { value in
+            DispatchQueue.main.async {
+                self.collectionViewList = value
+                self.loadingIndicator.stopAnimating()
+            }
+        }
     }
     
     /// Method to show user a view with subscription details
     func showAppleMusicSignup() {
-        
         // cloud service controller instance for checking capabilities
         let controller = SKCloudServiceController()
 

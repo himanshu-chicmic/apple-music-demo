@@ -15,7 +15,6 @@ class MusicInfoViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var albumTitleLable: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var tracksCountLable: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
@@ -27,7 +26,6 @@ class MusicInfoViewController: UIViewController {
     var trackList: MusicItemCollection<Track> = [] {
         didSet {
             self.tableView.reloadData()
-            self.tracksCountLable.text = "\(self.trackList.count) songs"
         }
     }
     
