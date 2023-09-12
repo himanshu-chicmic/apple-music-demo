@@ -7,6 +7,7 @@
 
 import Foundation
 import MusicKit
+import StoreKit
 
 class AppleMusicManager {
     
@@ -24,35 +25,32 @@ class AppleMusicManager {
     
     // MARK: - Methods
     
-    /// Method to check if user can play music
-    /// - Parameter completion: boolean value
-    func checkAppleMusicSubscription(completion: @escaping (Bool) -> Void) {
-        Task {
-            // var to store music subscription updates/type
-            var musicSubscription: MusicSubscription?
-            // observe updates on music subscription
-            for await subsciption in MusicSubscription.subscriptionUpdates {
-                musicSubscription = subsciption
-            }
-            // completion
-            completion(musicSubscription?.canPlayCatalogContent ?? false)
-        }
-    }
-    
     /// Method to fetch album tracks
     /// - Parameters:
     ///   - album: album instance whose tracks are fetched
     ///   - completion: completion sends a collection of type MusicItemCollection<Track>
-    func fetchAlbumTracks(album: MusicItemCollection<Album>.Element, completion: @escaping (MusicItemCollection<Track>) -> Void) {
+    func fetchTracks(album: MusicItemCollection<Album>.Element?, playlist: MusicItemCollection<Playlist>.Element?, completion: @escaping (MusicItemCollection<Track>) -> Void) {
         Task {
             do {
-                let detailedAlbum = try await album.with([.tracks])
-                // call completion
-                guard let tracks = detailedAlbum.tracks else {
+                if let album {
+                    let detailed = try await album.with([.tracks])
+                    // call completion
+                    guard let tracks = detailed.tracks else {
+                        completion([])
+                        return
+                    }
+                    completion(tracks)
+                } else if let playlist {
+                    let detailed = try await playlist.with([.tracks])
+                    // call completion
+                    guard let tracks = detailed.tracks else {
+                        completion([])
+                        return
+                    }
+                    completion(tracks)
+                } else {
                     completion([])
-                    return
                 }
-                completion(tracks)
             } catch {
                 print("Request Error: \(error.localizedDescription)")
                 completion([])
@@ -117,6 +115,27 @@ class AppleMusicManager {
                 completion([])
                 break
             }
+        }
+    }
+    
+    /// Method to show user a view with subscription details
+    func checkAppleMusicSubscription(completion: @escaping (Int) -> Void) {
+        // cloud service controller instance for checking capabilities
+        let controller = SKCloudServiceController()
+
+        // check capabilities
+        controller.requestCapabilities { capabilities, error in
+            // music can be played
+            // user has apple music account
+            if capabilities.contains(.musicCatalogPlayback) {
+                completion(0) // 0. can play music
+            }
+            // user is eligible to subscribe to apple music
+            else if capabilities.contains(.musicCatalogSubscriptionEligible) {
+                completion(1) // 1. present user with subscription offer
+            }
+            // handle other cases
+            completion(3)
         }
     }
 }

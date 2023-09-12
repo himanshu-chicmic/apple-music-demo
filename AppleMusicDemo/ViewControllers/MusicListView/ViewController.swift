@@ -47,55 +47,26 @@ class ViewController: UIViewController, SKCloudServiceSetupViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // show apple music signup
-        showAppleMusicSignup()
-        
         // set search bar and table view
         initSearchBar()
         
         // set activity indicator in view
         setActivityIndicator()
         
+        getPlaylists()
+    }
+    
+    // MARK: - Methods
+    
+    func getPlaylists() {
         loadingIndicator.startAnimating()
-        self.musicManager.fetchMusicPlaylists { value in
+        musicManager.fetchMusicPlaylists { value in
             DispatchQueue.main.async {
                 self.collectionViewList = value
                 self.loadingIndicator.stopAnimating()
             }
         }
     }
-    
-    /// Method to show user a view with subscription details
-    func showAppleMusicSignup() {
-        // cloud service controller instance for checking capabilities
-        let controller = SKCloudServiceController()
-
-        // check capabilities
-        controller.requestCapabilities { capabilities, error in
-            // music can be played
-            // user has apple music account
-            if capabilities.contains(.musicCatalogPlayback) {
-                // Write code here
-            }
-            // user is eligible to subscribe to apple music
-            else if capabilities.contains(.musicCatalogSubscriptionEligible) {
-                let vc = SKCloudServiceSetupViewController()
-                vc.delegate = self
-                let options: [SKCloudServiceSetupOptionsKey: Any] = [
-                    .action: SKCloudServiceSetupAction.subscribe,
-                    .messageIdentifier: SKCloudServiceSetupMessageIdentifier.playMusic
-                ]
-                // present view contoroller for subscription offer
-                vc.load(options: options) { success, error in
-                    if success {
-                        self.present(vc, animated: true)
-                    }
-                }
-            }
-        }
-    }
-    
-    // MARK: - Methods
     
     /// Method to call fetchMusic to get music data based on query
     /// - Parameter query: string value for search term

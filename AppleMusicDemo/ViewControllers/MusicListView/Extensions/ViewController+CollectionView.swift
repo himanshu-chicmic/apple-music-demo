@@ -27,4 +27,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.width / 3) - 8, height: (collectionView.frame.width / 3) - 8)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let destinationVC = storyboard?.instantiateViewController(withIdentifier: "AlbumInfo") as? MusicInfoViewController else {
+            return
+        }
+        destinationVC.playlist = collectionViewList[indexPath.row]
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }

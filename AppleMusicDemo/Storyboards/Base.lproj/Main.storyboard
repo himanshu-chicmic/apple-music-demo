@@ -170,37 +170,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Onw-Ec-3mW">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="E28-Lg-Pck"/>
+                                    <constraint firstAttribute="height" constant="240" id="E28-Lg-Pck"/>
                                 </constraints>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brb-5l-9Ja">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="sn0-3h-JzD"/>
+                                    <constraint firstAttribute="height" constant="240" id="sn0-3h-JzD"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-9b-Y9U">
-                                <rect key="frame" x="24" y="147" width="345" height="41"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-9b-Y9U">
+                                <rect key="frame" x="24" y="103" width="345" height="113"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Album Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYH-Ve-vd7">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-oe-YRk">
-                                        <rect key="frame" x="0.0" y="24" width="345" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baW-gN-QPo">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="5"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KzX-ae-IdU">
+                                        <rect key="frame" x="0.0" y="16.999999999999996" width="345" height="39.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Album Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYH-Ve-vd7">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-oe-YRk">
+                                                <rect key="frame" x="0.0" y="24" width="345" height="15.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ywQ-NF-rYr">
+                                        <rect key="frame" x="0.0" y="68.666666666666657" width="345" height="44.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9f-ge-img">
+                                                <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="44.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Play" imagePadding="4" cornerStyle="medium">
+                                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="small" variableValue="1"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAV-be-7aa">
+                                                <rect key="frame" x="175.66666666666663" y="0.0" width="169.33333333333337" height="44.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Join Apple Music" imagePadding="4" cornerStyle="medium">
+                                                    <imageReference key="image" image="apple.logo" catalog="system" symbolScale="small" variableValue="1"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="joinAppleMusicTapped:" destination="dfF-h3-Fs4" eventType="touchUpInside" id="L90-QN-BLG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-gu-1c4">
-                                <rect key="frame" x="0.0" y="200" width="393" height="618"/>
+                                <rect key="frame" x="0.0" y="240" width="393" height="578"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trackCell" id="sty-rJ-1dX" customClass="TrackTableViewCell" customModule="AppleMusicDemo" customModuleProvider="target">
@@ -213,27 +251,17 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="clS-yR-Yy2">
                                                     <rect key="frame" x="24" y="12" width="345" height="32.666666666666664"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qoc-Ho-t6n">
-                                                            <rect key="frame" x="0.0" y="5.3333333333333304" width="24" height="22.666666666666664"/>
-                                                            <color key="tintColor" systemColor="systemGray4Color"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="24" id="ZT2-wa-PQf"/>
-                                                                <constraint firstAttribute="height" constant="24" id="Zzk-OS-s7e"/>
-                                                            </constraints>
-                                                            <imageReference key="image" image="music.note.list" catalog="system" symbolScale="default" variableValue="0.0"/>
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                                        </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ht5-uu-jqN">
-                                                            <rect key="frame" x="32" y="0.33333333333333215" width="313" height="32.333333333333343"/>
+                                                            <rect key="frame" x="0.0" y="0.33333333333333215" width="345" height="32.333333333333343"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-ap-n4n">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="313" height="18"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-ap-n4n">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-Nc-fH8">
-                                                                    <rect key="frame" x="0.0" y="18" width="313" height="14.333333333333336"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-Nc-fH8">
+                                                                    <rect key="frame" x="0.0" y="18" width="345" height="14.333333333333336"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -270,7 +298,7 @@
                         <constraints>
                             <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="Onw-Ec-3mW" secondAttribute="trailing" id="0vx-bi-9c2"/>
                             <constraint firstItem="HZm-gu-1c4" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" id="30z-71-eoj"/>
-                            <constraint firstItem="oVw-9b-Y9U" firstAttribute="bottom" secondItem="Onw-Ec-3mW" secondAttribute="bottom" constant="-12" id="6Cx-Ep-Xnx"/>
+                            <constraint firstItem="oVw-9b-Y9U" firstAttribute="bottom" secondItem="Onw-Ec-3mW" secondAttribute="bottom" constant="-24" id="6Cx-Ep-Xnx"/>
                             <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="HZm-gu-1c4" secondAttribute="trailing" id="C6f-Kd-mRJ"/>
                             <constraint firstItem="Onw-Ec-3mW" firstAttribute="top" secondItem="6Cg-Ax-B19" secondAttribute="top" id="Dqs-Tt-mid"/>
                             <constraint firstItem="iDe-qu-uHT" firstAttribute="trailing" secondItem="brb-5l-9Ja" secondAttribute="trailing" id="NGL-t1-di9"/>
@@ -278,7 +306,7 @@
                             <constraint firstItem="oVw-9b-Y9U" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" constant="24" id="XlL-J9-hgh"/>
                             <constraint firstItem="brb-5l-9Ja" firstAttribute="top" secondItem="6Cg-Ax-B19" secondAttribute="top" id="Yzm-9y-yTn"/>
                             <constraint firstItem="Onw-Ec-3mW" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" id="aGV-0m-h4h"/>
-                            <constraint firstItem="oVw-9b-Y9U" firstAttribute="top" secondItem="iDe-qu-uHT" secondAttribute="top" constant="44" id="kU3-2K-OWy"/>
+                            <constraint firstItem="oVw-9b-Y9U" firstAttribute="top" secondItem="iDe-qu-uHT" secondAttribute="top" id="kU3-2K-OWy"/>
                             <constraint firstItem="iDe-qu-uHT" firstAttribute="bottom" secondItem="HZm-gu-1c4" secondAttribute="bottom" id="ldQ-kN-dEt"/>
                             <constraint firstItem="brb-5l-9Ja" firstAttribute="leading" secondItem="iDe-qu-uHT" secondAttribute="leading" id="li6-bs-KBA"/>
                             <constraint firstItem="HZm-gu-1c4" firstAttribute="top" secondItem="Onw-Ec-3mW" secondAttribute="bottom" id="ujf-4S-cUq"/>
@@ -289,6 +317,8 @@
                         <outlet property="albumTitleLable" destination="DYH-Ve-vd7" id="iH5-hK-eJE"/>
                         <outlet property="artistNameLabel" destination="oTg-oe-YRk" id="eyZ-Ia-tEE"/>
                         <outlet property="backgroundImageView" destination="Onw-Ec-3mW" id="bjj-L8-LFQ"/>
+                        <outlet property="joinAppleMusicBtn" destination="sAV-be-7aa" id="KB2-Rb-Xqd"/>
+                        <outlet property="playMusicBtn" destination="i9f-ge-img" id="Zt7-Di-3P7"/>
                         <outlet property="tableView" destination="HZm-gu-1c4" id="LZp-d7-tI3"/>
                     </connections>
                 </viewController>
@@ -316,12 +346,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <image name="apple.logo" catalog="system" width="105" height="128"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
