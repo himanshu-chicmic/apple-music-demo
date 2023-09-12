@@ -26,6 +26,7 @@ class ViewController: UIViewController, SKCloudServiceSetupViewControllerDelegat
     // shared instance for AppleMusicManager class
     let musicManager = AppleMusicManager.shared
     
+    // property to check active state of search view editor
     var searchViewIsActive: Bool = false {
         didSet {
             if searchViewIsActive {
@@ -51,18 +52,6 @@ class ViewController: UIViewController, SKCloudServiceSetupViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        SKCloudServiceController.requestAuthorization { (status) in
-//            switch status {
-//            case .authorized:
-//                // The user granted permission.
-//                // You can now access Apple Music features.
-//                self.showAppleMusicSignup()
-//            case .denied, .notDetermined, .restricted: break
-//                // Handle denied or restricted access.
-//            @unknown default:
-//                break
-//            }
-//        }
         // set search bar and table view
         initSearchBar()
         
@@ -72,31 +61,37 @@ class ViewController: UIViewController, SKCloudServiceSetupViewControllerDelegat
         // show hide view based on the music list array count
         tableView.isHidden = tableViewMusicList.isEmpty
         emptyListView.isHidden = !tableViewMusicList.isEmpty
+        
+        showAppleMusicSignup()
     }
     
     /// Method to show user a view with subscription details
     func showAppleMusicSignup() {
+        
+        // cloud service controller instance for checking capabilities
         let controller = SKCloudServiceController()
 
+        // check capabilities
         controller.requestCapabilities { capabilities, error in
+            // music can be played
+            // user has apple music account
             if capabilities.contains(.musicCatalogPlayback) {
-                // User has Apple Music account
+                // Write code here
             }
+            // user is eligible to subscribe to apple music
             else if capabilities.contains(.musicCatalogSubscriptionEligible) {
                 let vc = SKCloudServiceSetupViewController()
                 vc.delegate = self
-
                 let options: [SKCloudServiceSetupOptionsKey: Any] = [
                     .action: SKCloudServiceSetupAction.subscribe,
                     .messageIdentifier: SKCloudServiceSetupMessageIdentifier.playMusic
                 ]
-
+                // present view contoroller for subscription offer
                 vc.load(options: options) { success, error in
                     if success {
                         self.present(vc, animated: true)
                     }
                 }
-
             }
         }
     }
