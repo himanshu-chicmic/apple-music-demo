@@ -77,7 +77,6 @@ class AppleMusicManager {
                     request.limit = fetchResultLimit
                     // get request's reponse
                     let result = try await request.response()
-                    // get song details in [MusicItemModel] array
                     let albums = result.albums
                     // call completion
                     completion(albums)
