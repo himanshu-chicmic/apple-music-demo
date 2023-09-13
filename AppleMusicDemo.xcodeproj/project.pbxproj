@@ -20,6 +20,7 @@
 		6A5919CA2AAF218200ABC4BD /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5919C92AAF218200ABC4BD /* TrackTableViewCell.swift */; };
 		6A9DA85C2AA9D55B006B3A9A /* ViewController+SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DA85B2AA9D55B006B3A9A /* ViewController+SearchController.swift */; };
 		6A9DA8602AA9F730006B3A9A /* MusicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DA85F2AA9F730006B3A9A /* MusicInfoViewController.swift */; };
+		6ACA38EC2AB1741000CA147B /* AppleMusicSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACA38EB2AB1741000CA147B /* AppleMusicSubscription.swift */; };
 		6AF0F3C52AB066EF00315008 /* ViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF0F3C42AB066EF00315008 /* ViewController+CollectionView.swift */; };
 		6AF0F3C72AB0672E00315008 /* PlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF0F3C62AB0672E00315008 /* PlaylistCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		6A5919C92AAF218200ABC4BD /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		6A9DA85B2AA9D55B006B3A9A /* ViewController+SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SearchController.swift"; sourceTree = "<group>"; };
 		6A9DA85F2AA9F730006B3A9A /* MusicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfoViewController.swift; sourceTree = "<group>"; };
+		6ACA38EB2AB1741000CA147B /* AppleMusicSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSubscription.swift; sourceTree = "<group>"; };
 		6AF0F3C42AB066EF00315008 /* ViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		6AF0F3C62AB0672E00315008 /* PlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 		6A19EC1B2AA9A2B6004386DD /* AppleMusicManager */ = {
 			isa = PBXGroup;
 			children = (
+				6ACA38EA2AB1740300CA147B /* Enums */,
 				6A19EC1C2AA9A2CF004386DD /* AppleMusicManager.swift */,
 			);
 			path = AppleMusicManager;
@@ -166,6 +169,14 @@
 				6A9DA85F2AA9F730006B3A9A /* MusicInfoViewController.swift */,
 			);
 			path = MusicInfoView;
+			sourceTree = "<group>";
+		};
+		6ACA38EA2AB1740300CA147B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6ACA38EB2AB1741000CA147B /* AppleMusicSubscription.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				6A9DA8602AA9F730006B3A9A /* MusicInfoViewController.swift in Sources */,
 				6A0B74922AA98A4A000004D4 /* SceneDelegate.swift in Sources */,
 				6A5919C72AAF20A800ABC4BD /* MusicInfoViewController+TableView.swift in Sources */,
+				6ACA38EC2AB1741000CA147B /* AppleMusicSubscription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,7 +49,7 @@ class MusicInfoViewController: UIViewController, SKCloudServiceSetupViewControll
         // show apple music signup
         musicManager.checkAppleMusicSubscription { value in
             switch value {
-            case 0:
+            case .canPlayMusic:
                 // can play music no need to show any subscription
                 self.joinAppleMusicBtn.isHidden = true
                 self.playMusicBtn.alpha = 1

@@ -119,7 +119,7 @@ class AppleMusicManager {
     }
     
     /// Method to show user a view with subscription details
-    func checkAppleMusicSubscription(completion: @escaping (Int) -> Void) {
+    func checkAppleMusicSubscription(completion: @escaping (AppleMusicSubscription) -> Void) {
         // cloud service controller instance for checking capabilities
         let controller = SKCloudServiceController()
 
@@ -128,14 +128,14 @@ class AppleMusicManager {
             // music can be played
             // user has apple music account
             if capabilities.contains(.musicCatalogPlayback) {
-                completion(0) // 0. can play music
+                completion(.canPlayMusic) // an play music
             }
             // user is eligible to subscribe to apple music
             else if capabilities.contains(.musicCatalogSubscriptionEligible) {
-                completion(1) // 1. present user with subscription offer
+                completion(.canSubscribeToMusic) // present user with subscription offer
             }
             // handle other cases
-            completion(3)
+            completion(.unknown)
         }
     }
 }

@@ -30,7 +30,5 @@ class PlaylistCollectionViewCell: UICollectionViewCell {
             }
         }
         playlistTitle.text = playlist.name
-//        songNameLabel.text = album.title
-//        artistNameLabel.text = album.artistName
     }
 }
