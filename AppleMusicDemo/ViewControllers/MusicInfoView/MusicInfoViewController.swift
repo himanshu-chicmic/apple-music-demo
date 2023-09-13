@@ -101,17 +101,26 @@ class MusicInfoViewController: UIViewController, SKCloudServiceSetupViewControll
     }
     
     @IBAction func joinAppleMusicTapped(_ sender: Any) {
-        // present user with subscription offer
-        let vc = SKCloudServiceSetupViewController()
-        vc.delegate = self
-        let options: [SKCloudServiceSetupOptionsKey: Any] = [
-            .action: SKCloudServiceSetupAction.subscribe,
-            .messageIdentifier: SKCloudServiceSetupMessageIdentifier.playMusic
-        ]
-        // present view contoroller for subscription offer
-        vc.load(options: options) { success, error in
-            if success {
-                self.present(vc, animated: true)
+        
+        // show apple music signup
+        musicManager.checkAppleMusicSubscription { value in
+            switch value {
+            case .canSubscribeToMusic:
+                // present user with subscription offer
+                let vc = SKCloudServiceSetupViewController()
+                vc.delegate = self
+                let options: [SKCloudServiceSetupOptionsKey: Any] = [
+                    .action: SKCloudServiceSetupAction.subscribe,
+                    .messageIdentifier: SKCloudServiceSetupMessageIdentifier.playMusic
+                ]
+                // present view contoroller for subscription offer
+                vc.load(options: options) { success, error in
+                    if success {
+                        self.present(vc, animated: true)
+                    }
+                }
+            default:
+                break
             }
         }
     }
